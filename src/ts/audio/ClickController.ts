@@ -18,7 +18,7 @@ export class ClickController {
 
   private constructor() {
     this.clickFile = ClickController.getAudioFileById(this.clickFileId);
-    this.startButton = document.getElementById("startButton");
+    this.startButton = document.getElementById("playButton");
 
     this.startButton.addEventListener("click", () => {
       this.onStartButtonClick();

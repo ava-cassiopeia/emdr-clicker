@@ -1,0 +1,28 @@
+p.reset {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &.reset {
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+  }
+}
+
+button.reset {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: currentColor;
+  font-size: inherit;
+  display: inline-block;
+}
