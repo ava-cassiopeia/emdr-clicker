@@ -1,3 +1,7 @@
+/**
+ * Controller that manages playing back the EMDR audio and switching between
+ * the left and right ear.
+ */
 export class PlaybackController {
 
   leftAudio: HTMLAudioElement;
@@ -7,6 +11,9 @@ export class PlaybackController {
   private playLeft = true;
   private playingInterval: object|null = null;
 
+  /**
+   * Starts playback. If playback is already started, does nothing.
+   */
   start() {
     if (this.isPlaying) return;
     this.isPlaying = true;
@@ -16,6 +23,9 @@ export class PlaybackController {
     }, 500);
   }
 
+  /**
+   * Stops playback. If playback hasn't started, does nothing.
+   */
   stop() {
     if (!this.isPlaying) return;
     
@@ -27,6 +37,9 @@ export class PlaybackController {
     this.isPlaying = false;
   }
 
+  /**
+   * Toggles playback based on the current playback state.
+   */
   toggle() {
     if (this.isPlaying) {
       this.stop();

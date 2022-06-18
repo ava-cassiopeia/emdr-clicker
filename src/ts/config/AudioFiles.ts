@@ -12,6 +12,9 @@ export const AudioFiles: AudioFile[] = [
   }
 ];
 
+/**
+ * Represents a single audio file config.
+ */
 export type AudioFile = {
   id: string;
   uiName: string;

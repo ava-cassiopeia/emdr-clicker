@@ -1,6 +1,9 @@
 import {AudioFiles, AudioFile} from "../config/AudioFiles";
 import {PlaybackController} from "./PlaybackController";
 
+/**
+ * Manages the overall system for loading and playing the EMDR clicks.
+ */
 export class ClickController {
 
   loadingAudio = false;
