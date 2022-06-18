@@ -1,7 +1,7 @@
 {
-  "name": "fake-example-name",
+  "name": "emdr-clicker",
   "version": "0.1.0",
-  "description": "FILL THIS OUT.",
+  "description": "Simple web tool that provides stereo clicks for EMDR therapy.",
   "main": "index.js",
   "scripts": {
     "build": "gulp",

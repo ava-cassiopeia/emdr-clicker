@@ -8,7 +8,7 @@ const shellJS = fs.readFileSync(`${BUILD_DIR}/js/shell.js`, {encoding: "utf-8"})
 const shellCSS = fs.readFileSync(`${BUILD_DIR}/css/shell.css`, {encoding: "utf-8"});
 
 module.exports = {
-  siteTitle: "Fake Site Title",
+  siteTitle: "EMDR Clicker",
   static: {
     js: shellJS,
     css: shellCSS,
