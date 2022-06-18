@@ -7,7 +7,7 @@ export class PlaybackController {
   leftAudio: HTMLAudioElement;
   rightAudio: HTMLAudioElement;
 
-  private isPlaying = false;
+  private isPlaying_ = false;
   private playLeft = true;
   private playingInterval: object|null = null;
 
@@ -15,8 +15,8 @@ export class PlaybackController {
    * Starts playback. If playback is already started, does nothing.
    */
   start() {
-    if (this.isPlaying) return;
-    this.isPlaying = true;
+    if (this.isPlaying_) return;
+    this.isPlaying_ = true;
 
     this.playingInterval = setInterval(() => {
       this.playOneClick();
@@ -27,26 +27,30 @@ export class PlaybackController {
    * Stops playback. If playback hasn't started, does nothing.
    */
   stop() {
-    if (!this.isPlaying) return;
+    if (!this.isPlaying_) return;
     
     clearInterval(this.playingInterval as any);
     this.leftAudio.pause();
     this.rightAudio.pause();
     this.leftAudio.currentTime = 0;
     this.rightAudio.currentTime = 0;
-    this.isPlaying = false;
+    this.isPlaying_ = false;
   }
 
   /**
    * Toggles playback based on the current playback state.
    */
   toggle() {
-    if (this.isPlaying) {
+    if (this.isPlaying_) {
       this.stop();
       return;
     }
 
     this.start();
+  }
+
+  isPlaying(): boolean {
+    return this.isPlaying_;
   }
 
   private playOneClick() {
