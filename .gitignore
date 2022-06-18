@@ -1,0 +1,10 @@
+.DS_Store
+
+# NPM
+node_modules/
+
+# Firebase
+firebase-debug.log
+
+# Project-specific generated files
+build/
