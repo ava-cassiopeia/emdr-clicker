@@ -1,1 +1,3 @@
-console.log("site.ts");
+import {ClickController} from "./audio/ClickController";
+
+ClickController.init();
