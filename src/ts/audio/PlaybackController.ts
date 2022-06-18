@@ -20,6 +20,10 @@ export class PlaybackController {
     if (!this.isPlaying) return;
     
     clearInterval(this.playingInterval as any);
+    this.leftAudio.pause();
+    this.rightAudio.pause();
+    this.leftAudio.currentTime = 0;
+    this.rightAudio.currentTime = 0;
     this.isPlaying = false;
   }
 

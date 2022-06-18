@@ -3,12 +3,13 @@ import {PlaybackController} from "./PlaybackController";
 
 export class ClickController {
 
+  loadingAudio = false;
+
   private clickFileId = "chime";
   private clickFile: AudioFile;
   private leftAudio: HTMLAudioElement|null = null;
   private rightAudio: HTMLAudioElement|null = null;
   private playbackController: PlaybackController;
-  private loadingAudio = false;
 
   private startButton: HTMLElement;
 
@@ -46,6 +47,9 @@ export class ClickController {
     }
     this.playbackController.leftAudio = this.leftAudio;
     this.playbackController.rightAudio = this.rightAudio;
+
+    this.leftAudio.load();
+    this.rightAudio.load();
 
     await this.waitForAudioLoad();
     this.loadingAudio = false;
