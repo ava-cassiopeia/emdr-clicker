@@ -62,7 +62,7 @@ function buildJS() {
 }
 
 function copyStaticAssets() {
-  return gulp.src(["static/*"])
+  return gulp.src(["static/*", "static/**/*"])
     .pipe(gulp.dest(`${OUTPUT_DIR}/`));
 }
 
