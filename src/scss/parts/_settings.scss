@@ -7,6 +7,8 @@
   background: transparent;
   text-transform: uppercase;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
 
   &:hover {
     background: #000;
@@ -15,5 +17,9 @@
 
   &:focus {
     border: 1px solid #999;
+  }
+
+  .icon {
+    margin: 0 8px 0 0;
   }
 }

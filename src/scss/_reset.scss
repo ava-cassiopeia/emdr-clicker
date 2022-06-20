@@ -25,4 +25,10 @@ button.reset {
   color: currentColor;
   font-size: inherit;
   display: inline-block;
+  font-family: inherit;
+}
+
+.material-icons.reset {
+  font-size: inherit;
+  color: currentColor;
 }

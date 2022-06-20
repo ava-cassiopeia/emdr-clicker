@@ -15,7 +15,7 @@ export class ClickController {
   private playbackController: PlaybackController;
 
   private startButton: HTMLElement;
-  private startButtonOldText: string = "";
+  private startButtonOldContent: string = "";
 
   private constructor() {
     this.clickFile = ClickController.getAudioFileById(this.clickFileId);
@@ -37,12 +37,17 @@ export class ClickController {
 
   private updateStartButtonText() {
     if (this.playbackController.isPlaying()) {
-      this.startButtonOldText = this.startButton.textContent;
-      this.startButton.textContent = "Stop";
+      this.startButtonOldContent = this.startButton.innerHTML;
+      this.startButton.innerHTML = `
+        <span class="icon material-icons reset" aria-hidden="true">
+          stop
+        </span>
+        Stop
+        `;
       return;
     }
 
-    this.startButton.textContent = this.startButtonOldText;
+    this.startButton.innerHTML = this.startButtonOldContent;
   }
 
   private hasAudio(): boolean {
