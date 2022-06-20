@@ -58,6 +58,51 @@
         </p>
       </div>
     </main>
+    <dialog id="settingsDialog" class="settings-dialog">
+      <div class="underlay" aria-hidden="true"></div>
+      <form method="dialog" class="dialog-content">
+        <div class="settings-list">
+          <div class="setting">
+            <input type="checkbox" id="showVisualizationCheckbox">
+            <label for="showVisualizationCheckbox">Show Visualization</label>
+            <p class="info">
+              Show a visual representation of the clicking above the play
+              button.
+            </p>
+          </div>
+          <div class="setting">
+            <input type="number" id="intervalInput">
+            <label for="intervalInput">Interval Time (Milliseconds)</label>
+            <p class="info">
+              How much time to wait between clicks, in milliseconds. One second
+              has 1000 milliseconds in it.
+            </p>
+          </div>
+          <div class="setting">
+            <p>
+              Click Sound
+            </p>
+            <div>
+              <div>
+                <input type="radio" name="clickSound" value="chime" id="chimeClickSoundRadio">
+                <label for="chimeClickSoundRadio">Chime</label>
+              </div>
+              <div>
+                <input type="radio" name="clickSound" value="another" id="anotherClickSoundRadio">
+                <label for="anotherClickSoundRadio">Another</label>
+              </div>
+            </div>
+            <p class="info">
+              What sound to play as the "click" noise.
+            </p>
+          </div>
+        </div>
+        <div class="actions">
+          <button value="cancel">Cancel</button>
+          <button value="default">Save</button>
+        </div>
+      </form>
+    </dialog>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
