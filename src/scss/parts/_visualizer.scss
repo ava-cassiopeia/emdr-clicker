@@ -1,0 +1,43 @@
+.visualizer {
+  svg {
+    max-height: 100px;
+  }
+
+  .direction-indicator {
+    stroke: #000;
+    stroke-width: 2px;
+    fill: transparent;
+  }
+
+  .splash {
+    opacity: 0;
+    stroke-width: 0;
+    
+    &.once {
+      animation: splashRescale 300ms linear forwards;
+    }
+  }
+
+  .sound-tracker {
+    --anim-speed_: 150ms;
+    stroke-width: 0;
+    fill: #000;
+    transform-origin: center;
+    transition: transform 300ms ease;
+
+    &.right {
+      transform: translateX(86.7%);
+    }
+  }
+}
+
+@keyframes splashRescale {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
