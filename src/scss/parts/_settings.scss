@@ -9,6 +9,8 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+  font-family: inherit;
+  font-weight: bold;
 
   &:hover {
     background: #000;

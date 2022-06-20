@@ -2,6 +2,7 @@
   padding: 28px 40px;
   margin: 0 0 18px;
   font-size: 40px;
+  font-weight: bold;
   text-transform: uppercase;
   text-align: center;
   border: 2px solid #000;
@@ -10,6 +11,7 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+  font-family: inherit;
 
   &:hover {
     background: #000;
