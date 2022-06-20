@@ -10,6 +10,7 @@ export class PlaybackController {
   private isPlaying_ = false;
   private playLeft = true;
   private playingInterval: object|null = null;
+  private intervalMS = 500;
 
   /**
    * Starts playback. If playback is already started, does nothing.
@@ -20,7 +21,9 @@ export class PlaybackController {
 
     this.playingInterval = setInterval(() => {
       this.playOneClick();
-    }, 500);
+    }, this.intervalMS);
+
+    this.playOneClick();
   }
 
   /**
@@ -47,6 +50,13 @@ export class PlaybackController {
     }
 
     this.start();
+  }
+
+  /**
+   * Sets the interval of time between clicks, in milliseconds.
+   */
+  setInterval(intervalMS: number) {
+    this.intervalMS = intervalMS;
   }
 
   isPlaying(): boolean {
