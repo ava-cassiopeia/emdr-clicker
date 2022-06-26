@@ -31,4 +31,8 @@ button.reset {
 .material-icons.reset {
   font-size: inherit;
   color: currentColor;
+  min-width: 0;
+  min-height: 0;
+  width: auto;
+  height: auto;
 }

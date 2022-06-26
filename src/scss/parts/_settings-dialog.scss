@@ -8,6 +8,7 @@
   background: transparent;
   align-items: center;
   justify-content: center;
+  color: var(--text-color);
 
   &[open] {
     display: flex;
@@ -20,11 +21,119 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.35);
+
+    @media (prefers-color-scheme: dark) {
+      & {
+        background: rgba(255, 255, 255, 0.25);
+      }
+    }
   }
 
   .dialog-content {
     position: relative;
     background: var(--content-bg);
     z-index: 2;
+    border-radius: 8px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+                0 10px 10px rgba(0,0,0,0.22);
+  }
+
+  .dialog-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    font-size: 32px;
+    font-weight: normal;
+
+    .icon {
+      display: inline-block;
+      margin: 0 4px 0 0;
+    }
+  }
+
+  .settings-info {
+    margin: 0 auto 20px;
+    opacity: 0.65;
+    font-style: italic;
+    max-width: 80%;
+    text-align: center;
+  }
+
+  .settings-list {
+    padding: 12px;
+
+    .setting {
+      padding: 20px 0;
+      
+      &:not(:last-of-type) {
+        border-bottom: 1px solid #aaa;
+      }
+
+      .input-container {
+        margin: 0 0 8px;
+        font-size: 20px;
+
+        &:not(.radio-group) label {
+          font-weight: bold;
+        }
+      }
+
+      .radio-group, .checkbox-group {
+        input, label {
+          cursor: pointer;
+        }
+      }
+
+      .radio-group {
+        input, label {
+          display: inline-block;
+          padding: 8px;
+        }
+      }
+
+      .info {
+        margin: 0;
+        padding: 0 0 0 1em;
+        opacity: 0.65;
+
+        .icon {
+          transform: translateY(2px);
+        }
+      }
+
+      .options-list-label {
+        font-weight: bold;
+        margin: 0 0 8px;
+      }
+    }
+  }
+
+  .actions {
+    padding: 8px;
+    text-align: right;
+
+    button {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      border-radius: 4px;
+      border: 1px solid var(--theme-primary);
+      color: var(--theme-primary);
+      font-size: 20px;
+      background: transparent;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      &:hover {
+        background: var(--theme-primary);
+        color: var(--theme-primary-compliment);
+      }
+
+      .icon {
+        display: inline-block;
+        margin: 0 4px 0 0;
+      }
+    }
   }
 }

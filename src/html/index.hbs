@@ -61,45 +61,67 @@
     <dialog id="settingsDialog" class="settings-dialog">
       <div class="underlay" aria-hidden="true"></div>
       <form method="dialog" class="dialog-content">
+        <h2 class="dialog-title reset">
+          {{> components/material-icon name="settings" }}
+          Settings
+        </h2>
+        <p class="settings-info reset">
+          Settings are saved per-browser per-device.
+        </p>
         <div class="settings-list">
           <div class="setting">
-            <input type="checkbox" id="showVisualizationCheckbox">
-            <label for="showVisualizationCheckbox">Show Visualization</label>
-            <p class="info">
-              Show a visual representation of the clicking above the play
+            <div class="input-container checkbox-group">
+              <input type="checkbox" id="showVisualizationCheckbox">
+              <label for="showVisualizationCheckbox">Show Visualization</label>
+            </div>
+            <p class="info reset">
+              {{> components/material-icon name="info" }}
+              Show a visual representation of the clicking noise above the play
               button.
             </p>
           </div>
           <div class="setting">
-            <input type="number" id="intervalInput">
-            <label for="intervalInput">Interval Time (Milliseconds)</label>
-            <p class="info">
+            <div class="input-container">
+              <input type="number" id="intervalInput">
+              <label for="intervalInput">Interval Time (Milliseconds)</label>
+            </div>
+            <p class="info reset">
+              {{> components/material-icon name="info" }}
               How much time to wait between clicks, in milliseconds. One second
               has 1000 milliseconds in it.
             </p>
           </div>
           <div class="setting">
-            <p>
-              Click Sound
-            </p>
-            <div>
+            <div class="input-container radio-group">
+              <p class="options-list-label reset">
+                Click Sound
+              </p>
               <div>
-                <input type="radio" name="clickSound" value="chime" id="chimeClickSoundRadio">
-                <label for="chimeClickSoundRadio">Chime</label>
-              </div>
-              <div>
-                <input type="radio" name="clickSound" value="another" id="anotherClickSoundRadio">
-                <label for="anotherClickSoundRadio">Another</label>
+                <div class="single-radio-container">
+                  <input type="radio" name="clickSound" value="chime" id="chimeClickSoundRadio">
+                  <label for="chimeClickSoundRadio">Chime</label>
+                </div>
+                <div class="single-radio-container">
+                  <input type="radio" name="clickSound" value="another" id="anotherClickSoundRadio">
+                  <label for="anotherClickSoundRadio">Another</label>
+                </div>
               </div>
             </div>
-            <p class="info">
+            <p class="info reset">
+              {{> components/material-icon name="info" }}
               What sound to play as the "click" noise.
             </p>
           </div>
         </div>
         <div class="actions">
-          <button value="cancel">Cancel</button>
-          <button value="default">Save</button>
+          <button class="reset" value="cancel">
+            {{> components/material-icon name="cancel" }}
+            Cancel
+          </button>
+          <button class="reset" value="default">
+            {{> components/material-icon name="save" }}
+            Save
+          </button>
         </div>
       </form>
     </dialog>
