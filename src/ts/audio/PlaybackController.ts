@@ -12,7 +12,7 @@ export class PlaybackController {
   private isPlaying_ = false;
   private playLeft = true;
   private playingInterval: object|null = null;
-  private intervalMS = 500;
+  private intervalMS = 750;
 
   private readonly visualizerCtrl;
 
