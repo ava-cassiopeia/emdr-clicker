@@ -19,6 +19,8 @@ body {
   height: 100%;
   font-family: var(--theme-font);
   font-size: 16px;
+  background: var(--content-bg);
+  color: var(--text-color);
 }
 
 main {
@@ -26,4 +28,14 @@ main {
   margin: 0 auto;
   padding: 80px 35px;
   text-align: center;
+}
+
+a {
+  &:not(:visited) {
+    color: var(--link-color);
+  }
+  
+  &:visited {
+    color: var(--visited-link-color);
+  }
 }

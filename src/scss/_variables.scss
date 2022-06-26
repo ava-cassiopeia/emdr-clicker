@@ -5,10 +5,23 @@
   --theme-primary-compliment: #fff;
   --content-bg: #fff;
   --text-color: #000;
+  --link-color: blue;
+  --visited-link-color: purple;
   // Play button
   --play-button-play-icon-color: green;
   --play-button-stop-icon-color: red;
   // Visualizer
   --direction-indicator-color: var(--theme-primary);
   --sound-tracker-color: var(--theme-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-primary: #fff;
+    --theme-primary-compliment: #000;
+    --content-bg: #000;
+    --text-color: #fff;
+    --link-color: #64b5f6;
+    --visited-link-color: #ba68c8;
+  }
 }

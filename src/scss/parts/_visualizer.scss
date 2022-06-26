@@ -12,6 +12,7 @@
   .splash {
     opacity: 0;
     stroke-width: 0;
+    fill: var(--sound-tracker-color);
     
     &.once {
       animation: splashRescale 300ms linear forwards;
