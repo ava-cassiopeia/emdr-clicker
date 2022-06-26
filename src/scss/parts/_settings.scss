@@ -2,7 +2,8 @@
   font-size: 16px;
   margin: 0;
   padding: 12px 20px;
-  border: 1px solid #000;
+  border: 1px solid var(--theme-primary);
+  color: var(--theme-primary);
   border-radius: 4px;
   background: transparent;
   text-transform: uppercase;
@@ -13,8 +14,8 @@
   font-weight: bold;
 
   &:hover {
-    background: #000;
-    color: #fff;
+    background: var(--theme-primary);
+    color: var(--theme-primary-compliment);
   }
 
   &:focus {

@@ -24,7 +24,7 @@
 
   .dialog-content {
     position: relative;
-    background: #fff;
+    background: var(--content-bg);
     z-index: 2;
   }
 }

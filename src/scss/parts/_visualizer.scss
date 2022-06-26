@@ -4,7 +4,7 @@
   }
 
   .direction-indicator {
-    stroke: #000;
+    stroke: var(--direction-indicator-color);
     stroke-width: 2px;
     fill: transparent;
   }
@@ -21,7 +21,7 @@
   .sound-tracker {
     --anim-speed_: 150ms;
     stroke-width: 0;
-    fill: #000;
+    fill: var(--sound-tracker-color);
     transform-origin: center;
     transition: transform 300ms ease;
 

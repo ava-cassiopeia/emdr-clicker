@@ -1,3 +1,4 @@
+@import "variables";
 @import "reset";
 @import "parts/site-title";
 @import "parts/site-info";
@@ -16,7 +17,7 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  font-family: "Quicksand", sans-serif;
+  font-family: var(--theme-font);
   font-size: 16px;
 }
 

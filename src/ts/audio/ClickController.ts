@@ -39,7 +39,7 @@ export class ClickController {
     if (this.playbackController.isPlaying()) {
       this.startButtonOldContent = this.startButton.innerHTML;
       this.startButton.innerHTML = `
-        <span class="icon material-icons reset" aria-hidden="true">
+        <span class="icon material-icons reset stop" aria-hidden="true">
           stop
         </span>
         Stop

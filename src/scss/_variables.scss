@@ -1,0 +1,14 @@
+:root {
+  // Primary theme config
+  --theme-font: "Quicksand", sans-serif;
+  --theme-primary: #000;
+  --theme-primary-compliment: #fff;
+  --content-bg: #fff;
+  --text-color: #000;
+  // Play button
+  --play-button-play-icon-color: green;
+  --play-button-stop-icon-color: red;
+  // Visualizer
+  --direction-indicator-color: var(--theme-primary);
+  --sound-tracker-color: var(--theme-primary);
+}
