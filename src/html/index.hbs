@@ -66,7 +66,7 @@
     </main>
     <dialog id="settingsDialog" class="settings-dialog">
       <div class="underlay" aria-hidden="true"></div>
-      <form method="dialog" class="dialog-content">
+      <form method="dialog" class="dialog-content" id="settingsDialogForm">
         <h2 class="dialog-title reset">
           {{> components/material-icon name="settings" }}
           Settings
@@ -77,7 +77,10 @@
         <div class="settings-list">
           <div class="setting">
             <div class="input-container checkbox-group">
-              <input type="checkbox" id="showVisualizationCheckbox">
+              <input
+                  type="checkbox"
+                  name="showVisualization"
+                  id="showVisualizationCheckbox">
               <label for="showVisualizationCheckbox">Show Visualization</label>
             </div>
             <p class="info reset">
@@ -88,7 +91,10 @@
           </div>
           <div class="setting">
             <div class="input-container">
-              <input type="number" id="intervalInput">
+              <input
+                  type="number"
+                  name="intervalTime"
+                  id="intervalInput">
               <label for="intervalInput">Interval Time (Milliseconds)</label>
             </div>
             <p class="info reset">
@@ -120,11 +126,11 @@
           </div>
         </div>
         <div class="actions">
-          <button class="reset" value="cancel">
+          <button class="reset" type="button">
             {{> components/material-icon name="cancel" }}
             Cancel
           </button>
-          <button class="reset" value="default">
+          <button class="reset">
             {{> components/material-icon name="save" }}
             Save
           </button>
