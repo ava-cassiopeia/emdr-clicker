@@ -34,6 +34,7 @@
     background: var(--content-bg);
     z-index: 2;
     border-radius: 8px;
+    max-width: 600px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25),
                 0 10px 10px rgba(0,0,0,0.22);
   }
@@ -121,6 +122,47 @@
     font-family: inherit;
     padding: 4px;
     width: 100px;
+  }
+
+  .appearance-button-group {
+    display: flex;
+    align-items: center;
+    margin: 0 8px 0 0;
+
+    button {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      font-weight: bold;
+      border: 1px solid var(--theme-primary);
+      padding: 8px 16px;
+      transition: background 250ms ease,
+                  color 250ms ease;
+
+      &:first-of-type {
+        border-radius: 4px 0 0 4px;
+        border-right: none;
+      }
+
+      &:last-of-type {
+        border-radius: 0 4px 4px 0;
+        border-left: none;
+      }
+
+      &.selected {
+        background: var(--theme-primary);
+        color: var(--theme-primary-compliment);
+      }
+
+      .icon {
+        margin: 0 4px 0 0;
+      }
+    }
+  }
+
+  label.above {
+    display: block;
+    margin: 0 0 8px;
   }
 
   .actions {

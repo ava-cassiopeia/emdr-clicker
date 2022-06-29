@@ -48,7 +48,7 @@ export class SiteSettingsManifest {
         case ColorModes.DARK_MODE:
           return ColorModes.DARK_MODE;
         case ColorModes.FOLLOW_SYSTEM:
-          ColorModes.FOLLOW_SYSTEM;
+          return ColorModes.FOLLOW_SYSTEM;
         case ColorModes.LIGHT_MODE:
           return ColorModes.LIGHT_MODE;
         default:

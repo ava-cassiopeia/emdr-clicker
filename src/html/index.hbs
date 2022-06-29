@@ -132,6 +132,31 @@
               has 1000 milliseconds in it.
             </p>
           </div>
+          <div class="setting">
+            <div class="input-container">
+              <label class="above">Appearance</label>
+              <div class="appearance-button-group" id="colorModeButtonGroup">
+                <button type="button" class="reset" value="follow-system">
+                  {{> components/material-icon name="settings_suggest" }}
+                  Follow System
+                </button>
+                <button type="button" class="reset" value="dark">
+                  {{> components/material-icon name="dark_mode" }}
+                  Dark
+                </button>
+                <button type="button" class="reset" value="light">
+                  {{> components/material-icon name="light_mode" }}
+                  Light
+                </button>
+              </div>
+            </div>
+            <p class="info reset">
+              {{> components/material-icon name="info" }}
+              Set the appearance of the site. If "Follow System" is selected,
+              the site will match whatever dark / light settings you have set
+              in this device's settings.
+            </p>
+          </div>
         </div>
         <div class="actions">
           <button class="reset" type="button" id="cancelSettingsButton">

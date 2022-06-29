@@ -1,4 +1,5 @@
 import {SiteSettings, SiteSettingsManifest} from "./SiteSettings";
+import {ColorModeButtonGroup} from "../components/ColorModeButtonGroup";
 
 /**
  * Controller which manages the settings button and the settings dialog. Also
@@ -13,8 +14,12 @@ export class SettingsController {
   // Settings elements and inputs
   private readonly showVisualizationCheckbox: HTMLInputElement;
   private readonly intervalInput: HTMLInputElement;
+  private readonly colorModeButtonGroup: ColorModeButtonGroup;
 
   constructor() {
+    // Initially load all settings
+    SiteSettings.loadAll();
+
     this.settingsDialog =
       document.getElementById("settingsDialog") as HTMLDialogElement;
     this.settingsButton = document.getElementById("settingsButton");
@@ -25,6 +30,8 @@ export class SettingsController {
         document.getElementById("settingsDialogForm") as HTMLFormElement;
     this.intervalInput =
         document.getElementById("intervalInput") as HTMLInputElement;
+    this.colorModeButtonGroup =
+        new ColorModeButtonGroup("colorModeButtonGroup");
 
     this.settingsButton.addEventListener(
       "click",
@@ -38,9 +45,6 @@ export class SettingsController {
       "submit",
       () => this.onSettingsFormSubmitted(),
     );
-
-    // Initially load all settings
-    SiteSettings.loadAll();
   }
 
   private onSettingsButtonClick() {
@@ -91,6 +95,8 @@ export class SettingsController {
         SiteSettingsManifest.INTERVAL_TIME_MS.set(newIntervalValue);
       }
     }
+
+    SiteSettingsManifest.COLOR_MODE.set(this.colorModeButtonGroup.value());
   }
 
   static init(): SettingsController {
