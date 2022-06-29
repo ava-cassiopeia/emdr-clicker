@@ -16,11 +16,18 @@
   box-shadow: 0 14px 28px rgba(0,0,0,0.25),
               0 10px 10px rgba(0,0,0,0.22);
 
-  @media (prefers-color-scheme: dark) {
-    & {
-      box-shadow: 0 14px 28px rgba(255,255,255,0.20),
-                  0 10px 10px rgba(255,255,255,0.17);
+  .site-theme-follow-system {
+    @media (prefers-color-scheme: dark) {
+      .play-button {
+          box-shadow: 0 14px 28px rgba(255,255,255,0.20),
+                      0 10px 10px rgba(255,255,255,0.17);
+      }
     }
+  }
+
+  .site-theme-dark & {
+    box-shadow: 0 14px 28px rgba(255,255,255,0.20),
+                0 10px 10px rgba(255,255,255,0.17);
   }
 
   &:hover {
