@@ -11,6 +11,7 @@ export class SettingsController {
   private readonly settingsDialogForm: HTMLFormElement;
   // Settings elements and inputs
   private readonly showVisualizationCheckbox: HTMLInputElement;
+  private readonly intervalInput: HTMLInputElement;
 
   constructor() {
     this.settingsDialog =
@@ -20,6 +21,8 @@ export class SettingsController {
         document.getElementById("showVisualizationCheckbox") as HTMLInputElement;
     this.settingsDialogForm =
         document.getElementById("settingsDialogForm") as HTMLFormElement;
+    this.intervalInput =
+        document.getElementById("intervalInput") as HTMLInputElement;
 
     this.settingsButton.addEventListener(
       "click",
@@ -53,6 +56,8 @@ export class SettingsController {
   private syncSettingsToDOM() {
     this.showVisualizationCheckbox.checked =
         Boolean(SiteSettingsManifest.SHOW_VISUALIZATION.get());
+    this.intervalInput.value =
+        String(SiteSettingsManifest.INTERVAL_TIME_MS.get());
   }
 
   private syncSettingsFromDOM() {
@@ -62,6 +67,16 @@ export class SettingsController {
     // if the value was even provided at all.
     SiteSettingsManifest.SHOW_VISUALIZATION.set(
       formData.has("showVisualization"));
+
+    const rawIntervalValue = formData.get("intervalTime") as string;
+    if (rawIntervalValue.trim() !== "") {
+      const newIntervalValue = parseInt(rawIntervalValue.trim());
+
+      // If a reasonable value was set, update the speed.
+      if (newIntervalValue > 0) {
+        SiteSettingsManifest.INTERVAL_TIME_MS.set(newIntervalValue);
+      }
+    }
   }
 
   static init(): SettingsController {

@@ -20,6 +20,11 @@ export class PlaybackController {
   constructor() {
     this.visualizerCtrl = new VisualizerController(this);
     this.visualizerCtrl.sync();
+
+    this.updateFromSetting();
+
+    SiteSettingsManifest.INTERVAL_TIME_MS.addListener(
+        () => this.onSettingChanged());
   }
 
   /**
@@ -87,6 +92,25 @@ export class PlaybackController {
     }
 
     this.playLeft = !this.playLeft;
+  }
+
+  private onSettingChanged() {
+    this.updateFromSetting();
+  }
+
+  private updateFromSetting() {
+    const wasPlaying = this.isPlaying();
+    const newSpeed = SiteSettingsManifest.INTERVAL_TIME_MS.get() as number;
+    // If we were playing audio, stop. This is to make sure there's no
+    // unintended playback side effects that might happen in edge cases.
+    this.stop();
+
+    this.intervalMS = newSpeed;
+    this.visualizerCtrl.sync();
+
+    if (wasPlaying) {
+      this.start();
+    }
   }
 
 }
