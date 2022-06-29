@@ -154,6 +154,18 @@
         color: var(--theme-primary-compliment);
       }
 
+      &:not(.selected) {
+        &.follow-system .icon {
+          color: var(--folow-system-icon-color);
+        }
+        &.dark .icon {
+          color: var(--dark-mode-icon-color);
+        }
+        &.light .icon {
+          color: var(--light-mode-icon-color);
+        }
+      }
+
       .icon {
         margin: 0 4px 0 0;
       }

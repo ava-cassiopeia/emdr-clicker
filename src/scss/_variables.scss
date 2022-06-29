@@ -13,6 +13,10 @@
   // Visualizer
   --direction-indicator-color: var(--theme-primary);
   --sound-tracker-color: var(--theme-primary);
+  // Settings icons
+  --dark-mode-icon-color: #8e24aa;
+  --light-mode-icon-color: #fb8c00;
+  --folow-system-icon-color: #1e88e5;
 }
 
 @media (prefers-color-scheme: dark) {
