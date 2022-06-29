@@ -61,6 +61,7 @@ export class SiteSettingsManifest {
 
 
   private value: SiteSettingsValue;
+  private listeners: SiteSettingsManifestListener[] = [];
 
   private constructor(
       readonly id: string,
@@ -74,7 +75,7 @@ export class SiteSettingsManifest {
    * Attempts to load a value from local storage.
    */
   load() {
-    this.value = this.getFromLocalStorage();
+    this.set(this.getFromLocalStorage());
   }
 
   get(): SiteSettingsValue {
@@ -84,10 +85,25 @@ export class SiteSettingsManifest {
   set(newValue: SiteSettingsValue) {
     this.value = newValue;
     this.sync();
+    this.notify();
   }
 
   reset() {
     this.set(this.defaultValue);
+  }
+
+  /**
+   * Registers a callback that will be called whenever the setting value is
+   * changed.
+   */
+  addListener(listener: SiteSettingsManifestListener) {
+    this.listeners.push(listener);
+  }
+
+  private notify() {
+    for (const listener of this.listeners) {
+      listener(this.value);
+    }
   }
 
   private sync() {
@@ -102,6 +118,10 @@ export class SiteSettingsManifest {
 
 }
 
+/**
+ * Helper class that provides static helper functions for dealing with site
+ * settings.
+ */
 export class SiteSettings {
 
   private constructor() {}
@@ -120,4 +140,5 @@ export class SiteSettings {
 
 type SiteSettingsManifestDecoder = (rawValue: string) => SiteSettingsValue;
 type SiteSettingsManifestEncoder = (value: SiteSettingsValue) => string;
+type SiteSettingsManifestListener = (newValue: SiteSettingsValue) => void;
 type SiteSettingsValue = string|number|boolean|ColorModes;

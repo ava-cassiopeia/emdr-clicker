@@ -1,4 +1,5 @@
 import {VisualizerController} from "./VisualizerController";
+import {SiteSettingsManifest} from "../settings/SiteSettings";
 
 /**
  * Controller that manages playing back the EMDR audio and switching between

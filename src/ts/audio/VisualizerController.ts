@@ -1,6 +1,8 @@
 import {PlaybackController} from "./PlaybackController";
+import {SiteSettingsManifest} from "../settings/SiteSettings";
 
 const SOUND_TRACKER_MOVE_RIGHT_CSS_CLASS = "right";
+const HIDE_CSS_CLASS = "hide";
 
 /**
  * Controller which manages state and animations for the visualization of the
@@ -18,6 +20,21 @@ export class VisualizerController {
     this.soundTrackerEl = this.element.querySelector(".sound-tracker")!;
     this.leftSplash = this.element.querySelector(".splash.left");
     this.rightSplash = this.element.querySelector(".splash.right");
+
+    // Sync settings on first load
+    this.updateVisibilityFromSetting();
+
+    // Subscribe to updates when the SHOW_VISUALIZATION setting is changed.
+    SiteSettingsManifest.SHOW_VISUALIZATION.addListener(
+      () => this.settingChanged());
+  }
+
+  hide() {
+    this.element.classList.add(HIDE_CSS_CLASS);
+  }
+
+  show() {
+    this.element.classList.remove(HIDE_CSS_CLASS);
   }
 
   /**
@@ -51,6 +68,20 @@ export class VisualizerController {
     element.addEventListener("animationend", () => {
       element.classList.remove("once");
     }, {once: true});
+  }
+
+  private settingChanged() {
+    this.updateVisibilityFromSetting();
+  }
+
+  private updateVisibilityFromSetting() {
+    const showSelf = SiteSettingsManifest.SHOW_VISUALIZATION.get();
+    if (showSelf) {
+      this.show();
+      return;
+    }
+
+    this.hide();
   }
 
 }

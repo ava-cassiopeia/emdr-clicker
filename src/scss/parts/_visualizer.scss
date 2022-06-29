@@ -1,4 +1,9 @@
 .visualizer {
+  // Class that is added / removed as the user changes their settings.
+  &.hide {
+    display: none;
+  }
+
   svg {
     max-height: 100px;
   }
