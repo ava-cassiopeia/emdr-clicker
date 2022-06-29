@@ -66,112 +66,114 @@
     </main>
     <dialog id="settingsDialog" class="settings-dialog">
       <div class="underlay" aria-hidden="true"></div>
-      <form method="dialog" class="dialog-content" id="settingsDialogForm">
-        <h2 class="dialog-title reset">
-          {{> components/material-icon name="settings" }}
-          Settings
-        </h2>
-        <p class="settings-info reset">
-          Settings are saved per-browser per-device.
-        </p>
-        <div class="settings-list">
-          <div class="setting">
-            <div class="input-container checkbox-group">
-              <input
-                  type="checkbox"
-                  name="showVisualization"
-                  id="showVisualizationCheckbox">
-              <label for="showVisualizationCheckbox">Show Visualization</label>
-            </div>
-            <p class="info reset">
-              {{> components/material-icon name="info" }}
-              Show a visual representation of the clicking noise above the play
-              button.
-            </p>
-          </div>
-          <div class="setting hidden">
-            <div class="input-container radio-group">
-              <p class="options-list-label reset">
-                Click Sound
+      <div class="scroll-container">
+        <form method="dialog" class="dialog-content" id="settingsDialogForm">
+          <h2 class="dialog-title reset">
+            {{> components/material-icon name="settings" }}
+            Settings
+          </h2>
+          <p class="settings-info reset">
+            Settings are saved per-browser per-device.
+          </p>
+          <div class="settings-list">
+            <div class="setting">
+              <div class="input-container checkbox-group">
+                <input
+                    type="checkbox"
+                    name="showVisualization"
+                    id="showVisualizationCheckbox">
+                <label for="showVisualizationCheckbox">Show Visualization</label>
+              </div>
+              <p class="info reset">
+                {{> components/material-icon name="info" }}
+                Show a visual representation of the clicking noise above the play
+                button.
               </p>
-              <div>
-                <div class="single-radio-container">
-                  <input
-                      type="radio"
-                      name="clickSound"
-                      value="chime"
-                      id="chimeClickSoundRadio">
-                  <label for="chimeClickSoundRadio">Chime</label>
-                </div>
-                <div class="single-radio-container">
-                  <input
-                      type="radio"
-                      name="clickSound"
-                      value="another"
-                      id="anotherClickSoundRadio">
-                  <label for="anotherClickSoundRadio">Another</label>
+            </div>
+            <div class="setting hidden">
+              <div class="input-container radio-group">
+                <p class="options-list-label reset">
+                  Click Sound
+                </p>
+                <div>
+                  <div class="single-radio-container">
+                    <input
+                        type="radio"
+                        name="clickSound"
+                        value="chime"
+                        id="chimeClickSoundRadio">
+                    <label for="chimeClickSoundRadio">Chime</label>
+                  </div>
+                  <div class="single-radio-container">
+                    <input
+                        type="radio"
+                        name="clickSound"
+                        value="another"
+                        id="anotherClickSoundRadio">
+                    <label for="anotherClickSoundRadio">Another</label>
+                  </div>
                 </div>
               </div>
+              <p class="info reset">
+                {{> components/material-icon name="info" }}
+                What sound to play as the "click" noise.
+              </p>
             </div>
-            <p class="info reset">
-              {{> components/material-icon name="info" }}
-              What sound to play as the "click" noise.
-            </p>
-          </div>
-          <div class="setting">
-            <div class="input-container">
-              <input
-                  type="number"
-                  name="intervalTime"
-                  id="intervalInput">
-              <label for="intervalInput">Interval Time (Milliseconds)</label>
-            </div>
-            <p class="info reset">
-              {{> components/material-icon name="info" }}
-              How much time to wait between clicks, in milliseconds. One second
-              has 1000 milliseconds in it.
-            </p>
-          </div>
-          <div class="setting">
-            <div class="input-container">
-              <label class="above">Appearance</label>
-              <div class="appearance-button-group" id="colorModeButtonGroup">
-                <button
-                    type="button"
-                    class="reset follow-system"
-                    value="follow-system">
-                  {{> components/material-icon name="settings_suggest" }}
-                  Follow System
-                </button>
-                <button type="button" class="reset dark" value="dark">
-                  {{> components/material-icon name="dark_mode" }}
-                  Dark
-                </button>
-                <button type="button" class="reset light" value="light">
-                  {{> components/material-icon name="light_mode" }}
-                  Light
-                </button>
+            <div class="setting">
+              <div class="input-container">
+                <input
+                    type="number"
+                    name="intervalTime"
+                    id="intervalInput">
+                <label for="intervalInput">Interval Time (Milliseconds)</label>
               </div>
+              <p class="info reset">
+                {{> components/material-icon name="info" }}
+                How much time to wait between clicks, in milliseconds. One second
+                has 1000 milliseconds in it.
+              </p>
             </div>
-            <p class="info reset">
-              {{> components/material-icon name="info" }}
-              Set the appearance of the site. If "Follow System" is selected,
-              the site will match whatever dark / light settings you have set
-              in this device's settings.
-            </p>
+            <div class="setting">
+              <div class="input-container">
+                <label class="above">Appearance</label>
+                <div class="appearance-button-group" id="colorModeButtonGroup">
+                  <button
+                      type="button"
+                      class="reset follow-system"
+                      value="follow-system">
+                    {{> components/material-icon name="settings_suggest" }}
+                    Follow System
+                  </button>
+                  <button type="button" class="reset dark" value="dark">
+                    {{> components/material-icon name="dark_mode" }}
+                    Dark
+                  </button>
+                  <button type="button" class="reset light" value="light">
+                    {{> components/material-icon name="light_mode" }}
+                    Light
+                  </button>
+                </div>
+              </div>
+              <p class="info reset">
+                {{> components/material-icon name="info" }}
+                Set the appearance of the site. If "Follow System" is selected,
+                the site will match whatever dark / light settings you have set
+                in this device's settings.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="actions">
-          <button class="reset" type="button" id="cancelSettingsButton">
-            {{> components/material-icon name="cancel" }}
-            Cancel
-          </button>
-          <button class="reset">
-            {{> components/material-icon name="save" }}
-            Save
-          </button>
-        </div>
-      </form>
+          <div class="actions">
+            <button class="reset" type="button" id="cancelSettingsButton">
+              {{> components/material-icon name="cancel" }}
+              Cancel
+            </button>
+            <button class="reset">
+              {{> components/material-icon name="save" }}
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
     </dialog>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">

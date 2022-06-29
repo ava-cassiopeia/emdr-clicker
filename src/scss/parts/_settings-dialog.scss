@@ -1,17 +1,17 @@
 .settings-dialog {
   position: fixed;
+  padding: 0;
+  margin: 0;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   border: none;
   background: transparent;
-  align-items: center;
-  justify-content: center;
   color: var(--text-color);
 
   &[open] {
-    display: flex;
+    display: block;
   }
 
   .underlay {
@@ -35,8 +35,15 @@
     }
   }
 
+  .scroll-container {
+    overflow-y: auto;
+    max-height: 100vh;
+    padding: 32px 16px;
+  }
+
   .dialog-content {
     position: relative;
+    margin: 0 auto;
     background: var(--content-bg);
     z-index: 2;
     border-radius: 8px;
@@ -132,7 +139,7 @@
 
   .appearance-button-group {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     margin: 0 8px 0 0;
 
     button {
