@@ -89,21 +89,7 @@
               button.
             </p>
           </div>
-          <div class="setting">
-            <div class="input-container">
-              <input
-                  type="number"
-                  name="intervalTime"
-                  id="intervalInput">
-              <label for="intervalInput">Interval Time (Milliseconds)</label>
-            </div>
-            <p class="info reset">
-              {{> components/material-icon name="info" }}
-              How much time to wait between clicks, in milliseconds. One second
-              has 1000 milliseconds in it.
-            </p>
-          </div>
-          <div class="setting">
+          <div class="setting hidden">
             <div class="input-container radio-group">
               <p class="options-list-label reset">
                 Click Sound
@@ -130,6 +116,20 @@
             <p class="info reset">
               {{> components/material-icon name="info" }}
               What sound to play as the "click" noise.
+            </p>
+          </div>
+          <div class="setting">
+            <div class="input-container">
+              <input
+                  type="number"
+                  name="intervalTime"
+                  id="intervalInput">
+              <label for="intervalInput">Interval Time (Milliseconds)</label>
+            </div>
+            <p class="info reset">
+              {{> components/material-icon name="info" }}
+              How much time to wait between clicks, in milliseconds. One second
+              has 1000 milliseconds in it.
             </p>
           </div>
         </div>
