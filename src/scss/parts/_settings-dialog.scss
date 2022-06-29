@@ -109,6 +109,16 @@
     }
   }
 
+  input[type="number"] {
+    border: 1px solid #333;
+    border-radius: 4px;
+    margin: 0 4px 0 0;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 4px;
+    width: 100px;
+  }
+
   .actions {
     padding: 8px;
     text-align: right;
