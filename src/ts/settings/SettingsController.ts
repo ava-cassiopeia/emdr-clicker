@@ -8,6 +8,7 @@ export class SettingsController {
 
   private readonly settingsDialog: HTMLDialogElement;
   private readonly settingsButton: HTMLElement;
+  private readonly cancelSettingsButton: HTMLElement;
   private readonly settingsDialogForm: HTMLFormElement;
   // Settings elements and inputs
   private readonly showVisualizationCheckbox: HTMLInputElement;
@@ -17,6 +18,7 @@ export class SettingsController {
     this.settingsDialog =
       document.getElementById("settingsDialog") as HTMLDialogElement;
     this.settingsButton = document.getElementById("settingsButton");
+    this.cancelSettingsButton = document.getElementById("cancelSettingsButton");
     this.showVisualizationCheckbox =
         document.getElementById("showVisualizationCheckbox") as HTMLInputElement;
     this.settingsDialogForm =
@@ -27,6 +29,10 @@ export class SettingsController {
     this.settingsButton.addEventListener(
       "click",
       () => this.onSettingsButtonClick(),
+    );
+    this.cancelSettingsButton.addEventListener(
+      "click",
+      () => this.oncancelSettingsButtonClick(),
     );
     this.settingsDialogForm.addEventListener(
       "submit",
@@ -41,6 +47,10 @@ export class SettingsController {
     this.openSettings();
   }
 
+  private oncancelSettingsButtonClick() {
+    this.cancelSettings();
+  }
+
   private onSettingsFormSubmitted() {
     this.syncSettingsFromDOM();
   }
@@ -51,6 +61,10 @@ export class SettingsController {
     // but it is part of the specification as noted on MDN:
     // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
     this.settingsDialog.show();
+  }
+
+  private cancelSettings() {
+    this.settingsDialog.removeAttribute("open");
   }
 
   private syncSettingsToDOM() {

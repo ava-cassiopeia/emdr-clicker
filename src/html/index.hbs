@@ -110,11 +110,19 @@
               </p>
               <div>
                 <div class="single-radio-container">
-                  <input type="radio" name="clickSound" value="chime" id="chimeClickSoundRadio">
+                  <input
+                      type="radio"
+                      name="clickSound"
+                      value="chime"
+                      id="chimeClickSoundRadio">
                   <label for="chimeClickSoundRadio">Chime</label>
                 </div>
                 <div class="single-radio-container">
-                  <input type="radio" name="clickSound" value="another" id="anotherClickSoundRadio">
+                  <input
+                      type="radio"
+                      name="clickSound"
+                      value="another"
+                      id="anotherClickSoundRadio">
                   <label for="anotherClickSoundRadio">Another</label>
                 </div>
               </div>
@@ -126,7 +134,7 @@
           </div>
         </div>
         <div class="actions">
-          <button class="reset" type="button">
+          <button class="reset" type="button" id="cancelSettingsButton">
             {{> components/material-icon name="cancel" }}
             Cancel
           </button>
