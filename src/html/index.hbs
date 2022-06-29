@@ -12,15 +12,7 @@
   <body>
     <main>
       <h1 class="site-title">Bilateral Stimulation</h1>
-      <div id="visualizer" class="visualizer" aria-hidden="true">
-        <svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="20" cy="50" r="10" class="splash left" transform-origin="20 50" />
-          <circle cx="280" cy="50" r="10" class="splash right" transform-origin="280 50" />
-          <circle cx="20" cy="50" r="10" class="direction-indicator left" />
-          <circle cx="280" cy="50" r="10" class="direction-indicator right" />
-          <circle cx="20" cy="50" r="7" class="sound-tracker" />
-        </svg>
-      </div>
+      {{> parts/visualizer }}
       <button id="playButton" class="play-button">
         <span class="icon material-icons reset play" aria-hidden="true">
           play_circle_filled
@@ -35,146 +27,9 @@
           Settings
         </button>
       </div>
-      <div class="site-info">
-        <p class="main-info reset">
-          Provides
-          <a
-              href="https://en.wikipedia.org/wiki/Bilateral_sound"
-              target="_blank"
-              rel="noopener">
-            bilateral stimulation</a>
-          for
-          <a
-              href="https://en.wikipedia.org/wiki/Eye_movement_desensitization_and_reprocessing"
-              target="_blank"
-              rel="noopener">
-            EMDR therapy</a>.
-        </p>
-        <p class="code-link reset">
-          Source Code:
-          <a
-              href="https://github.com/ava-cassiopeia/emdr-clicker"
-              target="_blank"
-              rel="noopener">
-            @ava-cassiopeia/emdr-clicker
-          </a>
-        </p>
-        <p class="author-note reset">
-          Made with <span aria-label="love">💜</span> by Ava
-        </p>
-      </div>
+      {{> parts/site-info }}
     </main>
-    <dialog id="settingsDialog" class="settings-dialog">
-      <div class="underlay" aria-hidden="true"></div>
-      <div class="scroll-container">
-        <form method="dialog" class="dialog-content" id="settingsDialogForm">
-          <h2 class="dialog-title reset">
-            {{> components/material-icon name="settings" }}
-            Settings
-          </h2>
-          <p class="settings-info reset">
-            Settings are saved per-browser per-device.
-          </p>
-          <div class="settings-list">
-            <div class="setting">
-              <div class="input-container checkbox-group">
-                <input
-                    type="checkbox"
-                    name="showVisualization"
-                    id="showVisualizationCheckbox">
-                <label for="showVisualizationCheckbox">Show Visualization</label>
-              </div>
-              <p class="info reset">
-                {{> components/material-icon name="info" }}
-                Show a visual representation of the clicking noise above the play
-                button.
-              </p>
-            </div>
-            <div class="setting hidden">
-              <div class="input-container radio-group">
-                <p class="options-list-label reset">
-                  Click Sound
-                </p>
-                <div>
-                  <div class="single-radio-container">
-                    <input
-                        type="radio"
-                        name="clickSound"
-                        value="chime"
-                        id="chimeClickSoundRadio">
-                    <label for="chimeClickSoundRadio">Chime</label>
-                  </div>
-                  <div class="single-radio-container">
-                    <input
-                        type="radio"
-                        name="clickSound"
-                        value="another"
-                        id="anotherClickSoundRadio">
-                    <label for="anotherClickSoundRadio">Another</label>
-                  </div>
-                </div>
-              </div>
-              <p class="info reset">
-                {{> components/material-icon name="info" }}
-                What sound to play as the "click" noise.
-              </p>
-            </div>
-            <div class="setting">
-              <div class="input-container">
-                <input
-                    type="number"
-                    name="intervalTime"
-                    id="intervalInput">
-                <label for="intervalInput">Interval Time (Milliseconds)</label>
-              </div>
-              <p class="info reset">
-                {{> components/material-icon name="info" }}
-                How much time to wait between clicks, in milliseconds. One second
-                has 1000 milliseconds in it.
-              </p>
-            </div>
-            <div class="setting">
-              <div class="input-container">
-                <label class="above">Appearance</label>
-                <div class="appearance-button-group" id="colorModeButtonGroup">
-                  <button
-                      type="button"
-                      class="reset follow-system"
-                      value="follow-system">
-                    {{> components/material-icon name="settings_suggest" }}
-                    Follow System
-                  </button>
-                  <button type="button" class="reset dark" value="dark">
-                    {{> components/material-icon name="dark_mode" }}
-                    Dark
-                  </button>
-                  <button type="button" class="reset light" value="light">
-                    {{> components/material-icon name="light_mode" }}
-                    Light
-                  </button>
-                </div>
-              </div>
-              <p class="info reset">
-                {{> components/material-icon name="info" }}
-                Set the appearance of the site. If "Follow System" is selected,
-                the site will match whatever dark / light settings you have set
-                in this device's settings.
-              </p>
-            </div>
-          </div>
-          <div class="actions">
-            <button class="reset" type="button" id="cancelSettingsButton">
-              {{> components/material-icon name="cancel" }}
-              Cancel
-            </button>
-            <button class="reset">
-              {{> components/material-icon name="save" }}
-              Save
-            </button>
-          </div>
-        </form>
-      </div>
-    </dialog>
+    {{> parts/settings-dialog }}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
