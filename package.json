@@ -1,6 +1,6 @@
 {
   "name": "emdr-clicker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple web tool that provides stereo clicks for EMDR therapy.",
   "main": "index.js",
   "scripts": {
