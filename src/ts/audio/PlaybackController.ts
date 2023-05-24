@@ -48,10 +48,8 @@ export class PlaybackController {
     if (!this.isPlaying_) return;
     
     clearInterval(this.playingInterval as any);
-    this.leftAudio.pause();
-    this.rightAudio.pause();
-    this.leftAudio.currentTime = 0;
-    this.rightAudio.currentTime = 0;
+    this.stopOne(this.leftAudio);
+    this.stopOne(this.rightAudio);
     this.isPlaying_ = false;
   }
 
@@ -84,9 +82,11 @@ export class PlaybackController {
 
   private playOneClick() {
     if (this.playLeft) {
+      this.stopOne(this.leftAudio);
       this.leftAudio.play();
       this.visualizerCtrl.goRight();
     } else {
+      this.stopOne(this.rightAudio);
       this.rightAudio.play();
       this.visualizerCtrl.goLeft();
     }
@@ -111,6 +111,11 @@ export class PlaybackController {
     if (wasPlaying) {
       this.start();
     }
+  }
+
+  private stopOne(element: HTMLAudioElement) {
+    element.pause();
+    element.currentTime = 0;
   }
 
 }
