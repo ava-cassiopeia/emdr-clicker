@@ -80,13 +80,13 @@ export class PlaybackController {
     return this.intervalMS;
   }
 
-  private playOneClick() {
+  private async playOneClick() {
     if (this.playLeft) {
-      this.stopOne(this.leftAudio);
+      await this.stopOne(this.leftAudio);
       this.leftAudio.play();
       this.visualizerCtrl.goRight();
     } else {
-      this.stopOne(this.rightAudio);
+      await this.stopOne(this.rightAudio);
       this.rightAudio.play();
       this.visualizerCtrl.goLeft();
     }
@@ -113,9 +113,15 @@ export class PlaybackController {
     }
   }
 
-  private stopOne(element: HTMLAudioElement) {
+  private stopOne(element: HTMLAudioElement): Promise<void> {
     element.pause();
     element.currentTime = 0;
+
+    return new Promise((resolve) => {
+      requestAnimationFrame(() => {
+        resolve();
+      });
+    });
   }
 
 }
