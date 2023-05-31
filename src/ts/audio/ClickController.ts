@@ -60,7 +60,11 @@ export class ClickController {
     const rightFilePath = this.clickFile.sources.right;
 
     this.leftAudio = new Audio(leftFilePath);
+    this.leftAudio.loop = false;
+    this.leftAudio.preload = "auto";
     this.rightAudio = new Audio(rightFilePath);
+    this.rightAudio.loop = false;
+    this.rightAudio.preload = "auto";
 
     if (!this.playbackController) {
       this.playbackController = new PlaybackController();
