@@ -1,5 +1,8 @@
 .DS_Store
 
+# Swap files
+*.swp
+
 # NPM
 node_modules/
 
