@@ -23,6 +23,6 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "sass": "^1.80.5"
+    "sass": "^1.82.0"
   }
 }
