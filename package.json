@@ -17,7 +17,7 @@
     "gulp-sass": "^6.0.0",
     "gulp-typescript": "^6.0.0-alpha.1",
     "handlebars-generator": "^3.2.3",
-    "ts-loader": "^9.5.1",
+    "ts-loader": "^9.5.2",
     "typescript": "^5.7.2",
     "webpack": "^5.97.1",
     "webpack-stream": "^7.0.0"
