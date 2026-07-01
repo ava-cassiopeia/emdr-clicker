@@ -18,7 +18,7 @@
     "gulp-typescript": "^6.0.0-alpha.1",
     "handlebars-generator": "^3.2.3",
     "ts-loader": "^9.5.1",
-    "typescript": "^5.7.2",
+    "typescript": "^6.0.3",
     "webpack": "^5.97.1",
     "webpack-stream": "^7.0.0"
   },
